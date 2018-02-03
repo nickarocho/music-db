@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-mongoose.connect(process.env.DATABAse_URL)
+mongoose.connect(process.env.DATABASE_URL)
 
 //databse connection event 
 mongoose.connection.once('open', function() {
