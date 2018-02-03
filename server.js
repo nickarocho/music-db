@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var session = require('express-session');
+var passport = require('passport');
 
 require('dotenv').config();
 
@@ -13,6 +14,9 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
+
+require('./config/database');
+require('./config/passport');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -30,6 +34,8 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use('/', index);
 app.use('/users', users);
