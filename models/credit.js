@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 var creditSchema = new mongoose.Schema ({
-    action: {type: String, enum: []},
+    action: {type: String, enum: ["Played", "Wrote", "Produced", "Engineered"]},
     instrument: {
         type: String,
         enum: [ "Accordion", "Acoustic guitar", "Alto saxophone", "Auxilliary percussion", "Background vocals", "Banjo", "Baritone saxophone", 
@@ -12,3 +12,5 @@ var creditSchema = new mongoose.Schema ({
     },
     media: {type: String}
 });
+
+module.exports = mongoose.model('Credit', creditSchema);
