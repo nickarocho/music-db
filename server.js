@@ -12,6 +12,7 @@ require('dotenv').config();
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+// var credits = require('./routes/credits');
 
 var app = express();
 
@@ -38,7 +39,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/', index);
-app.use('/users', users);
+app.use('/', users);
+// app.use('/')
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
