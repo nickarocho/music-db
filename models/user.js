@@ -7,7 +7,8 @@ var userSchema = new mongoose.Schema({
     bio: String,
     credits: {type: mongoose.Schema.Types.ObjectId, ref: 'Credit'},
     role: {type: [String], enum: ["Woodwinds", "Brass", "Drummer", "Percussionist", "Guitarist", "Bassist", "Harpist", "Vocalist", "Keyboards", "Strings", "Songwriter", "Recording Engineer", "Producer"]},
-    alias: String
+    alias: String,
+    facebookId: String
 });
 
 userSchema.virtual('fullName').get(function() {
