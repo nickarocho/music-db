@@ -3,6 +3,14 @@ nav, header, main, footer {
   padding-right: 30px;
 }
 
+nav.search-results, footer.search-results {
+  padding: 0 30px;
+}
+
+main.search-results, footer.search-results {
+  padding: 50px;
+}
+
 @media only screen and (max-width : 992px) {
   nav, header, main, footer {
     padding-left: 0;

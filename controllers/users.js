@@ -1,22 +1,23 @@
 var user = require('../models/user');
-var request = require('request');
+// var request = require('request');
 const rootURL = 'https://api.spotify.com/v1/';
 
 
 function search(req, res) {
-    var options = {
-        url: `${rootURL}search?q=${req.body.name}&type=artist`,
-        headers: {
-            'Authorization': `Bearer ${process.env.SPOTIFY_TOKEN}`
-        }
+        res.render('users/search-results', { user: req.user });
     };
-    request(options, function (err, response, body) {
-        var artistData = JSON.parse(body);
-        console.log(artistData);
-        res.redirect('/');
+    // var options = {
+    //     url: `${rootURL}search?q=${req.body.name}&type=artist`,
+    //     headers: {
+    //         'Authorization': `Bearer ${process.env.SPOTIFY_TOKEN}`
+    //     }
+    // };
+    // request(options, function (err, response, body) {
+    //     var artistData = JSON.parse(body);
+    //     console.log(artistData);
         // res.render('users/search-results', {artistData});
-    });
-}
+    // });
+// }
 
 
 function create(req, res) {

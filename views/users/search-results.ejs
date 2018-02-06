@@ -1,0 +1,125 @@
+<%- include('../_partials/header')%>
+<div class="navbar-fixed valign-wrapper">
+    <nav class="search-results">
+        <a href="#!" class="brand-logo">Music DB</a>
+        <ul class="right hide-on-med-and-down">
+            <div class="nav-wrapper">
+                <li>    
+                    <div class="center row">
+                        <div class="col s12" >
+                            <div id="topbarsearch">
+                                <div class="input-field col s6 s12 white">
+                                    <i class="black-text material-icons prefix">search</i>
+                                    <input type="text" placeholder="search" id="autocomplete-input" class="autocomplete black-text" >
+                                </div>
+                            </div>
+                        </div>
+                    </div>          
+                </li>
+                <% if (user) { %>
+                    <li><a href="/logout"><i class="material-icons left">trending_flat</i>Logout</a></li>
+                <% } else { %>
+                    <li><a href="/auth/facebook"><i class="material-icons left">vpn_key</i>Login with Facebook</a></li>
+                <% } %>
+            </div>
+        </ul>
+    </nav>
+</div>
+<main class="search-results">
+    <div class="row">
+        <div class="col s7">
+            <h5>Joe Shmoe</h5>
+            <p>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
+            sed diam nonumy eirmod tempor invidunt ut labore et dolore 
+            magna aliquyam erat, sed diam voluptua.
+            </p>
+            <a href="#">View Credits →</a>
+            <br>
+            <h5>Mr. Guy</h5>
+            <p>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
+                sed diam nonumy eirmod tempor invidunt ut labore et dolore 
+                magna aliquyam erat, sed diam voluptua.
+            </p>
+            <a href="#">View Credits →</a>
+            <br>
+            <h5>Jane McGee</h5>
+            <p>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
+                sed diam nonumy eirmod tempor invidunt ut labore et dolore 
+                magna aliquyam erat, sed diam voluptua.
+            </p>
+            <a href="#">View Credits →</a>
+            <br>
+            <h5>Bob Jones</h5>
+            <p>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
+                sed diam nonumy eirmod tempor invidunt ut labore et dolore 
+                magna aliquyam erat, sed diam voluptua.
+            </p>
+            <a href="#">View Credits →</a>
+            <br>
+            <h5>Mrs. Lady</h5>
+            <p>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
+                sed diam nonumy eirmod tempor invidunt ut labore et dolore 
+                magna aliquyam erat, sed diam voluptua.
+            </p>
+            <a href="#">View Credits →</a>
+            <br>
+            <ul class="pagination center">
+                <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+                <li class="active"><a href="#!">1</a></li>
+                <li class="waves-effect"><a href="#!">2</a></li>
+                <li class="waves-effect"><a href="#!">3</a></li>
+                <li class="waves-effect"><a href="#!">4</a></li>
+                <li class="waves-effect"><a href="#!">5</a></li>
+                <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+            </ul>
+        </div>
+        <div class="card horizontal col s5">
+            <div class="card-image">
+                <img class="circle" src="/images/person-placeholder-sm.png">
+            </div>
+            <div class="card-stacked">
+                <div class="card-content">
+                    <h4>Joe Shmoe</h4>
+                    <h5>Drummer</h5>
+                    <p>Brief description about this result here. Maybe pull a couple top artists/albums/tracks</p>
+                </div>
+                <div class="card-action">
+                    <a class="waves-effect waves-light btn" href="/profile">View All Credits<i class="material-icons right">visibility</i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="page-footer search-results">
+        <div class="container">
+            <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">Footer Content Here</h5>
+                <p class="grey-text text-lighten-4">We can use rows and columns here to organize our footer content.</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                </ul>
+            </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+            © 2018 Copyright Music DB
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+        </div>
+    </footer>
+    
+    </body>
+    </html>
