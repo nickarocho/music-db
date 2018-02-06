@@ -11,6 +11,11 @@ main.search-results, footer.search-results {
   padding: 50px;
 }
 
+main {
+  margin: 20px;
+  min-height: 47.5vh;
+}
+
 @media only screen and (max-width : 992px) {
   nav, header, main, footer {
     padding-left: 0;
@@ -19,4 +24,20 @@ main.search-results, footer.search-results {
 
 .side-nav {
   padding: 50px 20px;
+}
+
+.credits-row {
+  margin: 50px 20px;
+}
+
+.credits-page {
+  margin: 50px 20px;
+}
+
+.credits-area {
+  margin: 20px 0;
+}
+
+td {
+  padding: 3px 5px;
 }

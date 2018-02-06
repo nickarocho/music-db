@@ -19,7 +19,6 @@ function search(req, res) {
     // });
 // }
 
-
 function create(req, res) {
     var user = new user(req.body);
     user.save(function(err) {
