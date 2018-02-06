@@ -5,6 +5,7 @@ var userCtrl = require('../controllers/users');
 /* GET users listing. */
 
 router.get('/search', userCtrl.search);
+router.get('/show', userCtrl.show);
 router.get('/profile', userCtrl.new);
 router.post('/', userCtrl.create);
 
