@@ -32,8 +32,13 @@ function newUser(req, res) {
     res.render('users/new', {user: new user()});
 }
 
+function show(req, res) {
+    res.render('users/show', {user});
+}
+
 module.exports = {
     search,
+    show,
     new: newUser,
     create
 }
