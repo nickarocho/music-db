@@ -4,8 +4,9 @@ var creditCtrl = require('../controllers/credits');
 
 
 
-router.post('/', creditCtrl.new);
 router.get('/profile', creditCtrl.new);
+router.post('/', creditCtrl.new);
+router.get('/profile', creditCtrl.show);
 
 
 
