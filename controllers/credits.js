@@ -10,6 +10,7 @@ function show(req, res) {
     res.render('credits/profile')
 }
 
+
 // function searchSpotify(req, res) {
 //     var options = {
 //         url: `${rootURL}search?q=${req.body.name}&type=artist`,
@@ -23,7 +24,6 @@ function show(req, res) {
 //         res.render('users/search-results', {artistData});
 //     });
 // }
-
 
 module.exports = {
     new: newCredit,
