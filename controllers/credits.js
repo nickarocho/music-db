@@ -3,13 +3,13 @@ var request = require('request');
 const rootURL = 'https://api.spotify.com/v1/';
 
 
-function newCredit(req, res) {
-    res.render('credits/profile', {});
-}
+// function newCredit(req, res) {
+//     res.render('credits/profile', {});
+// }
 
-function show(req, res) {
-    res.render('credits/profile', {});
-}
+// function showCredit(req, res) {
+//     res.render('credits/profile', {});
+// }
 
 
 // function searchSpotify(req, res) {
@@ -26,7 +26,7 @@ function show(req, res) {
 //     });
 // }
 
-module.exports = {
-    new: newCredit,
-    show
-}
+// module.exports = {
+//     new: newCredit,
+//     // showCredit
+// }

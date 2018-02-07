@@ -18,7 +18,8 @@ function create(req, res) {
 }
 
 function newUser(req, res) {
-    res.render('users/new', {user: new User()});
+    console.log(req.user)
+    res.render('users/new', {user: req.user });
 }
 
 function show(req, res) {
