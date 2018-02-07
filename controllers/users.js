@@ -22,7 +22,7 @@ function newUser(req, res) {
 }
 
 function show(req, res) {
-    res.render('users/show', {user});
+    res.render('users/show', {user: new User});
 }
 
 module.exports = {
