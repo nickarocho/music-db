@@ -3,6 +3,11 @@ nav, header, main, footer {
   padding-right: 30px;
 }
 
+nav {
+  padding-left: 330px;
+  padding-right: 30px;
+}
+
 nav .test {
   padding-left: 330px;
   padding-right: 30px;

@@ -4,10 +4,11 @@ const rootURL = 'https://api.spotify.com/v1/';
 
 
 function newCredit(req, res) {
-    res.render('credits/profile')
+    res.render('credits/profile', {});
 }
+
 function show(req, res) {
-    res.render('credits/profile')
+    res.render('credits/profile', {});
 }
 
 
@@ -27,4 +28,5 @@ function show(req, res) {
 
 module.exports = {
     new: newCredit,
+    show
 }
