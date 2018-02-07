@@ -6,10 +6,11 @@ passport.use(new FacebookStrategy({
     clientID: process.env.FACEBOOK_APP_ID,
     clientSecret: process.env.FACEBOOK_APP_SECRET,
     callbackURL: process.env.FACEBOOK_CALLBACK,
-    profileFields: ['id', 'displayName', 'first_name', 'last_name', 'photos', 'email']
+    profileFields: ['id', 'displayName', 'first_name', 'last_name', 'email']
 },
 function(accessToken, refreshToken, profile, cb) {
-    User.findOne({ 'facebookId': profile.id }, function(err, user) { 
+    User.findOne({ facebookId: profile.id }, function(err, user) { 
+        console.log(`This is the logged in user: ${user}`)
         if (err) return cb(err);
         if (user) {
             return cb(null, user);
