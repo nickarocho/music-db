@@ -3,8 +3,9 @@ s<%- include('../_partials/header') %>
     <li class="center-align"><img src="/images/person-placeholder.png" alt="profile-pic"></li>
     <li>
         <div class="row">
-            <% if (!user) { %>
-                <h1><%= JSON.stringify(user) %></h1>
+            <% if (user.firstName && user.lastName) { %>
+                <h2><%= user.firstName %></h2>
+                <h2><%= user.lastName %></h2>
             <% } else { %>
             <div class="input-field col s6">
                 <input id="firstName" type="text" class="validate">

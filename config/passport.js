@@ -6,7 +6,7 @@ passport.use(new FacebookStrategy({
     clientID: process.env.FACEBOOK_APP_ID,
     clientSecret: process.env.FACEBOOK_APP_SECRET,
     callbackURL: process.env.FACEBOOK_CALLBACK,
-    profileFields: ['id', 'displayName', 'first_name', 'last_name', 'email']
+    profileFields: ['hometown', 'id', 'name', 'email']
 },
 function(accessToken, refreshToken, profile, cb) {
     User.findOne({ facebookId: profile.id }, function(err, user) { 
@@ -16,8 +16,8 @@ function(accessToken, refreshToken, profile, cb) {
             return cb(null, user);
         } else {
             var newUser = new User({
-                firstName: profile.name.givenName,
-                lastName: profile.name.familyName,
+                name: profile.name.givenName + ' ' + profile.name.familyName,
+                hometown: profile.hometown,
                 email: profile.emails[0].value,
                 facebookId: profile.id
             });

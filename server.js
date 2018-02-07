@@ -36,7 +36,9 @@ app.use(session({
   saveUninitialized: true
 }));
 app.use(passport.initialize());
+app.use((req, res, next) => {req.user = req.session.user; next()})
 app.use(passport.session());
+
 
 
 
