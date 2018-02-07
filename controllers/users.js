@@ -24,7 +24,7 @@ function create(req, res) {
     user.save(function(err) {
         if (err) return res.render('users/new');
         console.log(user);
-        res.redirect('/profile');
+        res.redirect('/users/new');
     })
 }
 
