@@ -16,7 +16,6 @@ function createCredit(req, res) {
     });   
 }
 
-
 function newCredit(req, res) {
     res.render('credits/new');
 }
@@ -25,32 +24,9 @@ function newCredit(req, res) {
 //     res.render('credits/profile', {});
 // }
 
-
-// function searchSpotify(req, res) {
-//     spotifyApi.clientCredentialsGrant()
-//     .then(function(data) {
-//         spotifyApi.setAccessToken(data.body['access_token']);
-//         var options = {
-//             url: `${rootURL}search?q=${req.body.name}&type=artist`,
-//             headers: {
-//                 'Authorization': `Bearer ${data.body['access_token']}`
-//             }
-//         };
-//         request(options, function (err, response, body) {
-//             var artistData = JSON.parse(body);
-//             res.render('users/search-results', { artistData, user: req.user });
-//             console.log(artistData)
-//         });
-
-//     })
-//     .catch(function(err) {
-//     })
-// }
-
 module.exports = {
    index,
    create: createCredit,
    new: newCredit,
 //    show,
-//    searchSpotify
 }
