@@ -4,11 +4,11 @@ var creditSchema = new mongoose.Schema ({
     action: {type: String, enum: ["Played", "Wrote", "Produced", "Engineered"]},
     instrument: {
         type: String,
-        enum: [ "Accordion", "Acoustic guitar", "Alto saxophone", "Auxilliary percussion", "Background vocals", "Banjo", "Baritone saxophone", 
-                "Baritone", "Bass clarinet", "Bass trombone", "Bongos", "Cajon", "Cello", "Clarinet", "Congas", "Contrabass", "Cowbell", 
-                "Djembe", "Drum set", "Electric bass", "Electric guitar", "Flugelhorn", "Flute", "French horn", "Harmonica", "Harp", "Keyboards(general)", 
-                "Lead vocals", "Mandolin", "Marimba", "Mellophone", "Oboe", "Organ", "Piano", "Piccolo", "Soprano saxophone", "Steel drums", 
-                "Steel guitar", "Synthesizer", "Tenor saxophone", "Timbales", "Timpani", "Trombone", "Trumpet", "Tuba", "Upright bass", "Vibraphone", "Viola", "Violin" ]
+        enum: [ "accordion", "acoustic guitar", "alto saxophone", "auxilliary percussion", "background vocals", "banjo", "baritone saxophone", 
+                "baritone", "bass clarinet", "bass trombone", "bongos", "cajon", "cello", "clarinet", "congas", "contrabass", "cowbell", 
+                "djembe", "drum set", "electric bass", "electric guitar", "flugelhorn", "flute", "french horn", "harmonica", "harp", "keyboards (general)", 
+                "lead vocals", "mandolin", "marimba", "mellophone", "oboe", "organ", "piano", "piccolo", "soprano saxophone", "steel drums", 
+                "steel guitar", "synthesizer", "tenor saxophone", "timbales", "timpani", "trombone", "trumpet", "tuba", "upright bass", "vibraphone", "viola", "violin" ]
     },
     media: {type: String}
 });
