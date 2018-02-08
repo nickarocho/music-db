@@ -4,8 +4,8 @@ s<%- include('../_partials/header') %>
     <li>
         <div class="row">
             <% if (user.firstName && user.lastName) { %>
-                <h2><%= user.firstName %></h2>
-                <h2><%= user.lastName %></h2>
+                <h4><%= user.firstName %></h4>
+                <h4><%= user.lastName %></h4>
             <% } else { %>
             <div class="input-field col s6">
                 <input id="firstName" type="text" class="validate">
