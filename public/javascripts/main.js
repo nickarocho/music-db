@@ -9,10 +9,9 @@ function searchSpotify() {
   })
     .then(res => res.json())
     .then(function (json) {
-      // convert json into object for data
-      // console.log(json)
+      console.log(json)
       $('input.autocomplete').autocomplete({
-        data: json.artists.items.name,
+        data: json,
         limit: 20, // The max amount of results that can be shown at once. Default: Infinity.
         onAutocomplete: function (val) {
           // Callback function when value is autcompleted.

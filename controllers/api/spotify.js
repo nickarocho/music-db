@@ -2,39 +2,33 @@ var credit = require('../../models/credit');
 var request = require('request');
 const rootURL = 'https://api.spotify.com/v1/';
 const spotifyApi = require('./../../config/token');
+var convertToObj = require('./../../utils/convertToObj');
+
 
 function getSpotify(req, res) {
     spotifyApi.clientCredentialsGrant()
         .then(function (data) {
-            spotifyApi.setAccessToken(data.body['access_token']);
-            var options = {
-                url: `${rootURL}search?q=${req.body.name}&type=artist`,
-                headers: {
-                    'Authorization': `Bearer ${data.body['access_token']}`
-                }
-            };
-            request(options, function (err, response, body) {
-                var artistData = JSON.parse(body);
-                // res.render('credits/index', { artistData, user: req.user });
-                res.json(artistData)
-                // console.log(artistData.artists.items)
-            });
-
+            if (req.body.name !== '') {
+                spotifyApi.setAccessToken(data.body['access_token']);
+                var options = {
+                    url: `${rootURL}search?q=${req.body.name}&type=artist`,
+                    headers: {
+                        'Authorization': `Bearer ${data.body['access_token']}`
+                    }
+                };
+                request(options, function (err, response, body) {
+                    var artistData = JSON.parse(body);
+                    console.log('the body is:' + body);
+                    console.log('the error is:' + err);
+                    console.log(convertToObj(artistData.artists.items))
+                    res.json(convertToObj(artistData.artists.items, true));
+                });
+            }
         })
         .catch(function (err) {
         })
 }
 
-function convertToObj(req, res) {
-    var obj = {};
-    for (var idx = 0; idx < artistData.artists.items.length; idx++) {
-        obj[artistData.artists.items[idx]] = null;
-    }
-    console.log(obj);
-    res.status(200).json(obj);
-};
-
 module.exports = {
-    getSpotify,
-    convertToObj
+    getSpotify
 }
