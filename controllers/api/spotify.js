@@ -17,13 +17,15 @@ function getSpotify(req, res) {
                 var artistData = JSON.parse(body);
                 // res.render('credits/index', { artistData, user: req.user });
                 res.json(artistData)
-                console.log(artistData.artists.items)
+                // console.log(artistData.artists.items)
             });
 
         })
         .catch(function (err) {
         })
 }
+
+
 
 module.exports = {
     getSpotify
