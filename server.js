@@ -13,6 +13,7 @@ require('dotenv').config();
 var index = require('./routes/index');
 var users = require('./routes/users');
 var credits = require('./routes/credits');
+var api = require('./routes/api');
 
 var app = express();
 
