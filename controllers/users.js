@@ -8,7 +8,12 @@ function search(req, res) {
     };
 
 function newUser(req, res) {
-    res.render('users/new', {user: req.user});
+    console.log(req.user)
+    res.render('users/new', {user: req.user });
+}
+
+function show(req, res) {
+    res.render('users/show', {user: new User});
 }
 
 module.exports = {

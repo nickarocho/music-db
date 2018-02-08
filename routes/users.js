@@ -9,4 +9,5 @@ router.get('/search', userCtrl.search);
 router.get('/users/new', userCtrl.new);
 
 
+
 module.exports = router;

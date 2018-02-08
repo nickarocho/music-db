@@ -16,13 +16,14 @@ function createCredit(req, res) {
     });   
 }
 
+
 function newCredit(req, res) {
     res.render('credits/new');
 }
 
-function show(req, res) {
-    res.render('credits/profile', {});
-}
+// function showCredit(req, res) {
+//     res.render('credits/profile', {});
+// }
 
 
 // function searchSpotify(req, res) {
