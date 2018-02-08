@@ -4,9 +4,9 @@ const rootURL = 'https://api.spotify.com/v1/';
 const spotifyApi = require('./../config/token');
 
 function index(req, res) {
-   req.user.populate('credits', function(err) {
-    res.render('credits/index', {user: req.user});
-   });
+//    req.user.populate('credits', function(err) {
+// });
+res.render('credits/index', {user: req.user});
 }
 
 function createCredit(req, res) {

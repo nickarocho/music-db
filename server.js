@@ -44,15 +44,9 @@ app.use(passport.session());
 
 
 app.use('/', index);
-<<<<<<< HEAD
-app.use('/users', users);
-app.use('/', credits);
-app.use('/', api);
-=======
 app.use('/', users);
 app.use('/credits', credits);
 
->>>>>>> 52b34a3d93db4b7a3b4d19ff000b4ad5c68a8646
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
