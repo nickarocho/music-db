@@ -1,5 +1,4 @@
 //---------- JQUERY INITIALIZERS for MATERIALIZE.CSS ----------//
-
 $(document).ready(function() {
   // dropdown selection
   $('select').material_select();
@@ -18,13 +17,14 @@ $(document).ready(function() {
     minLength: 1,
   });
 
-  // autocomplete (w/ "instruments" enum from credit model)
+  // // autocomplete (w/ "instruments" enum from credit model)
   fetch('/api/credits')
     .then(res => res.json())
-    .then(json => console.log(json))
+    // .then(json => console.log(json))
     .then(function(json) {
+      console.log(json)
       $('input.autocomplete-instruments').autocomplete({
-        data: {"apple": null},
+        data: json,
         limit: 20, // The max amount of results that can be shown at once. Default: Infinity.
         onAutocomplete: function(val) {
         // Callback function when value is autcompleted.
@@ -33,7 +33,6 @@ $(document).ready(function() {
       });
     });
 });
-
 
   // $('.mdb-submit').click(function(evt) {
   //   fetch('/users', {
@@ -53,7 +52,6 @@ $(document).ready(function() {
   //     $('.mdb-userName').text(user.firstName)
   //   });
   // })
-});
 
 
 

@@ -40,12 +40,10 @@ app.use(passport.initialize());
 app.use((req, res, next) => {req.user = req.session.user; next()})
 app.use(passport.session());
 
-
-
-
 app.use('/', index);
 app.use('/', users);
 app.use('/credits', credits);
+app.use('/', api);
 
 
 // catch 404 and forward to error handler
