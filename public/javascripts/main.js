@@ -21,8 +21,11 @@ $('.mdb-submit').click(function(evt) {
   })
 })
 
+});
 
-  });
+function getDataFromSpotify() {
+  fetch()
+}
 
 
 

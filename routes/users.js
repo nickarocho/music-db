@@ -6,9 +6,7 @@ var userCtrl = require('../controllers/users');
 /* GET users listing. */
 
 router.get('/search', userCtrl.search);
-router.get('/show', userCtrl.show);
-router.get('/new', userCtrl.new);
-router.post('/users', userCtrl.create);
+router.get('/users/new', userCtrl.new);
 
 
 module.exports = router;
