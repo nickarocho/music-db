@@ -2,7 +2,6 @@
 <ul id="slide-out" class="side-nav fixed teal lighten-2">
     <li class="center-align"><img src="/images/person-placeholder.png" alt="profile-pic"></li>
     <li>Full Name Here</li>
-    <li><p class="center-align">Hometown, ST</p></li>
 </ul>
 <div class="navbar-fixed valign-wrapper">
     <nav>
@@ -28,16 +27,33 @@
 <h1 class="mdb-userName"><%= user.firstName></h1>
 <main class="credits-page">
     <h3>Add a Credit</h3>
-    <div class="row col s12">
-        <div class="input-field col s3">
+    <div class="row col s12 valign-wrapper">
+        <div class="col s1 left-align"><h5>I</h5></div>
+        <div class="input-field col s2 left-align">
             <select>
                 <option value="" disabled selected>Choose one...</option>
-                <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
-                <option value="3">Option 3</option>
+                <option value="played">played</option>
+                <option value="wrote">wrote</option>
+                <option value="produced">produced</option>
             </select>
-            <label>Materialize Select</label>
+        </div>
+        <div class="input-field col s2 left-align">
+            <i class="material-icons prefix">textsms</i>
+            <input type="text" id="autocomplete-input" class="autocomplete-instruments">
+            <label for="autocomplete-input">Start typing...</label>
+        </div>
+        <div class="col s1 left-align"><h5>on</h5></div>
+        <div class="input-field col s4 left-align">
+            <i class="material-icons prefix">textsms</i>
+            <input type="text" id="autocomplete-input" class="autocomplete">
+            <label for="autocomplete-input">Start typing... (Powered by Spotify)</label>
+        </div>
+        <div class="col s2">
+            <a class="waves-effect waves-light btn mdb-submit">Submit</a>
         </div>
     </div>
+    <!-- <div class="row">
+        <div class="col s2 offset-right s9"><a class="waves-effect waves-light btn mdb-submit">Submit</a></div>
+    </div> -->
 </main>
 <%- include('../_partials/footer')%>
