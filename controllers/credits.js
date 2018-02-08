@@ -2,15 +2,16 @@ var credit = require('../models/credit');
 var request = require('request');
 const rootURL = 'https://api.spotify.com/v1/';
 
-
 function newCredit(req, res) {
     res.render('credits/profile', {});
 }
 
-function show(req, res) {
-    res.render('credits/profile', {});
-}
-
+// function findInstrument(req, res) {
+//     res.render('credits/profile', {});
+//     fetch('/models/credit')
+//     .then(res => res.json())
+//     .then(json => console.log(json));
+// }
 
 // function searchSpotify(req, res) {
 //     var options = {
@@ -28,5 +29,4 @@ function show(req, res) {
 
 module.exports = {
     new: newCredit,
-    show
 }

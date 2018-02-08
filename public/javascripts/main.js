@@ -1,37 +1,39 @@
+//---------- JQUERY INITIALIZERS for MATERIALIZE.CSS ----------//
 
-//---------- JQUERY INITIALIZERS FOR MATERIALIZE.CSS ----------//
-
-// dropdown selection
 $(document).ready(function() {
+  // dropdown selection
   $('select').material_select();
-});
 
-// autocomplete (w/ Spotify API json hopefully?)
-$('input.autocomplete').autocomplete({
-  data: {
-      "Apple": null,
-      "Microsoft": null,
-      "Google": 'https://placehold.it/250x250'
+  // autocomplete (via Spotify API)
+  $('input.autocomplete').autocomplete({
+    data: {
+        "Apple": null,
+        "Microsoft": null,
+        "Google": 'https://placehold.it/250x250'
+      },
+      limit: 20,
+      onAutocomplete: function(val) {
+    // Callback function when value is autcompleted.
     },
-    limit: 20, // The max amount of results that can be shown at once. Default: Infinity.
-    onAutocomplete: function(val) {
-  // Callback function when value is autcompleted.
-  },
-  minLength: 1, // The minimum length of the input for the autocomplete to start. Default: 1.
-});
+    minLength: 1,
+  });
 
-// autocomplete (w/ "instruments" enum from credit model)
-$('input.autocomplete-instruments').autocomplete({
-  data: {
-      "Apple": null,
-      "Microsoft": null,
-      "Google": 'https://placehold.it/250x250'
-    },
-    limit: 20, // The max amount of results that can be shown at once. Default: Infinity.
-    onAutocomplete: function(val) {
-  // Callback function when value is autcompleted.
-  },
-  minLength: 1, // The minimum length of the input for the autocomplete to start. Default: 1.
+  // autocomplete (w/ "instruments" enum from credit model)
+  fetch('/api/credits')
+    .then(res => res.json())
+    .then(json => console.log(json))
+    .then(function(json) {
+      $('input.autocomplete-instruments').autocomplete({
+        data: {
+          // var arr = JSON.parse(instruments)
+        },
+        limit: 20, // The max amount of results that can be shown at once. Default: Infinity.
+        onAutocomplete: function(val) {
+        // Callback function when value is autcompleted.
+        },
+        minLength: 1,
+      });
+    });
 });
 
 //-------------- ALL OTHER JS --------------//
@@ -53,6 +55,3 @@ $('.mdb-submit').click(function(evt) {
     $('.mdb-userName').text(user.firstName)
   })
 })
-
-
-
