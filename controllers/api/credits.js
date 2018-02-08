@@ -1,15 +1,9 @@
 var Credit = require('../../models/credit')
+var convertToObj = require('./../../utils/convertToObj');
 
 function getCredits(req, res) {
-    var rv = {};
-    for (var i = 0; i < Credit.schema.path('instrument').enumValues.length; ++i) {
-        rv[Credit.schema.path('instrument').enumValues[i]] = null;
-    }
-    console.log(rv);
-    res.status(200).json(rv);
+    res.status(200).json(convertToObj(Credit.schema.path('instrument').enumValues))
 };
-
-
 
 module.exports = {
     getCredits
