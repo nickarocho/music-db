@@ -24,9 +24,7 @@ $(document).ready(function() {
     .then(json => console.log(json))
     .then(function(json) {
       $('input.autocomplete-instruments').autocomplete({
-        data: {
-          // var arr = JSON.parse(instruments)
-        },
+        data: json,
         limit: 20, // The max amount of results that can be shown at once. Default: Infinity.
         onAutocomplete: function(val) {
         // Callback function when value is autcompleted.
