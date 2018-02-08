@@ -50,7 +50,7 @@ function newCredit(req, res) {
 module.exports = {
    index,
    create: createCredit,
-   new: newCredit,
-   show,
+   new: newCredit
+//    show,
 //    searchSpotify
 }
