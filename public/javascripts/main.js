@@ -53,7 +53,7 @@ $(document).ready(function() {
   //     $('.mdb-userName').text(user.firstName)
   //   });
   // })
-});
+// });
 
 
 
