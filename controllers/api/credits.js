@@ -1,4 +1,4 @@
-var credit = require('../../models/credit')
+var Credit = require('../../models/credit')
 
 function getCredits(req, res) {
     var rv = {};
