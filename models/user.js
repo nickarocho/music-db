@@ -5,7 +5,7 @@ var userSchema = new mongoose.Schema({
     lastName: {type: String, required: true},
     hometown: String,
     bio: String,
-    credits: {type: mongoose.Schema.Types.ObjectId, ref: 'Credit'},
+    credits: [{type: mongoose.Schema.Types.ObjectId, ref: 'Credit'}],
     role: {type: [String], enum: ["Woodwinds", "Brass", "Drummer", "Percussionist", "Guitarist", "Bassist", "Harpist", "Vocalist", "Keyboards", "Strings", "Songwriter", "Recording Engineer", "Producer"]},
     alias: String,
     facebookId: String

@@ -2,6 +2,7 @@
 $(document).ready(function() {
     $('select').material_select();
 
+
   // $('.mdb-submit').click(function(evt) {
   //   fetch('/users', {
   //     method: 'POST',
@@ -21,6 +22,7 @@ $(document).ready(function() {
   //   });
   // })
 });
+
 
 
 
