@@ -3,6 +3,10 @@ s<%- include('../_partials/header') %>
     <li class="center-align"><img src="/images/person-placeholder.png" alt="profile-pic"></li>
     <li>
         <div class="row">
+            <% if (user.firstName && user.lastName) { %>
+                <h4><%= user.firstName %></h4>
+                <h4><%= user.lastName %></h4>
+            <% } else { %>
             <div class="input-field col s6">
                 <input id="firstName" type="text" class="validate">
                 <label class="active" for="firstName">First Name</label>
@@ -22,6 +26,7 @@ s<%- include('../_partials/header') %>
         </div>
     </li>
     <li><a class="waves-effect waves-light btn mdb-submit">Submit</a></li>
+    <% } %>
 </ul>
 <div class="navbar-fixed valign-wrapper">
     <nav>

@@ -8,9 +8,14 @@ nav {
   padding-right: 30px;
 }
 
-nav .test {
-  padding-left: 330px;
+.index {
+  padding-left: 20px;
   padding-right: 30px;
+}
+
+.index-main {
+  height: 80vh;
+  padding-left: 0;
 }
 
 nav.search-results, footer.search-results {
