@@ -25,9 +25,6 @@ function getSpotify(req, res) {
         })
 }
 
-<<<<<<< HEAD
-
-=======
 function convertToObj(req, res) {
     var obj = {};
     for (var idx = 0; idx < artistData.artists.items.length; idx++) {
@@ -36,7 +33,6 @@ function convertToObj(req, res) {
     console.log(obj);
     res.status(200).json(obj);
 };
->>>>>>> master
 
 module.exports = {
     getSpotify,
