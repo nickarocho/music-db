@@ -5,6 +5,5 @@ var spotifyCtrl = require('../controllers/api/spotify');
 
 router.get('/api/credits', apiCtrl.getCredits);
 router.post('/api/spotify', spotifyCtrl.getSpotify);
-router.get('/api/spotify', spotifyCtrl.convertToObj);
 
 module.exports = router;
