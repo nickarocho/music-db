@@ -33,11 +33,21 @@
     </nav>
 </div>
 <main class="credits-page">
+    <section id="credits-container">
+        <% user.credits.forEach(function(credit) { %>
+            <div>
+                <p><%= credit.action %></p>
+                <p><%= credit.instrument %></p>
+                <p><%= credit.artist %></p>
+            </div>
+        
+        <% }) %>
+    </section>
     <h3>Add a Credit</h3>
     <div class="row col s12 valign-wrapper">
         <div class="col s1 left-align"><h5>I</h5></div>
         <div class="input-field col s2 left-align">
-            <select>
+            <select id="action">
                 <option value="" disabled selected>Choose one...</option>
                 <option value="played">played</option>
                 <option value="wrote">wrote</option>
@@ -49,18 +59,16 @@
             <input type="text" id="autocomplete-input" class="autocomplete-instruments">
             <label for="autocomplete-input">Start typing...</label>
         </div>
-        <div class="col s1 left-align"><h5>on</h5></div>
+        <div class="col s1 left-align"><h5>with</h5></div>
         <div class="input-field col s4 left-align">
             <i class="material-icons prefix">textsms</i>
             <input type="text" id="autocomplete-input" class="autocomplete search-spotify" oninput="searchSpotify()">
             <label for="autocomplete-input">Start typing... (Powered by Spotify)</label>
         </div>
         <div class="col s2">
-            <a class="waves-effect waves-light btn mdb-submit">Submit</a>
+            <a id="add-credit" class="waves-effect waves-light btn mdb-submit">Submit</a>
         </div>
     </div>
-    <!-- <div class="row">
-        <div class="col s2 offset-right s9"><a class="waves-effect waves-light btn mdb-submit">Submit</a></div>
-    </div> -->
 </main>
+
 <%- include('../_partials/footer')%>
