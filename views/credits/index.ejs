@@ -1,6 +1,12 @@
 <%- include('../_partials/header') %>
 <ul id="slide-out" class="side-nav fixed teal lighten-2">
-    <li class="center-align"><img src="/images/person-placeholder.png" alt="profile-pic"></li>
+    <li>
+      <% if (user.picture) { %> 
+        <img src="<%= user.picture %>">
+      <% } else { %>
+        <li class="center-align"><img src="/images/person-placeholder.png" alt="profile-pic"></li>
+     <% } %>
+    </li>
     <li><% if (user.firstName && user.lastName) { %>
         <h4><%= user.firstName + ' ' + user.lastName  %></h4>
         <% } else { %>
