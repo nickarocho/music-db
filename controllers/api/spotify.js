@@ -25,6 +25,16 @@ function getSpotify(req, res) {
         })
 }
 
+function convertToObj(req, res) {
+    var obj = {};
+    for (var idx = 0; idx < artistData.artists.items.length; idx++) {
+        obj[artistData.artists.items[idx]] = null;
+    }
+    console.log(obj);
+    res.status(200).json(obj);
+};
+
 module.exports = {
-    getSpotify
+    getSpotify,
+    convertToObj
 }
