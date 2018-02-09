@@ -24,7 +24,6 @@ function updateCredit(req, res) {
     });
 }
 
-
 module.exports = {
     index,
     edit,
