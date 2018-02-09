@@ -4,7 +4,6 @@ const rootURL = 'https://api.spotify.com/v1/';
 const spotifyApi = require('./../../config/token');
 var convertToObj = require('./../../utils/convertToObj');
 
-
 function getSpotify(req, res) {
     spotifyApi.clientCredentialsGrant()
         .then(function (data) {
