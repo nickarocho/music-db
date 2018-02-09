@@ -9,7 +9,7 @@ function index(req, res) {
 function edit(req, res, next) {
     Credit.findById(req.params.id, function(err, credit) {
         if (err) return next(err);
-        res.render('credits/edit', { credit });
+        res.render('credits/edit', { credit, user: req.user });
     });
 }
 
