@@ -1,31 +1,20 @@
 <%- include('../_partials/header')%>
+
 <div class="navbar-fixed valign-wrapper">
-    <nav class="search-results">
-        <a href="#!" class="brand-logo">Music DB</a>
-        <ul class="right hide-on-med-and-down">
-            <div class="nav-wrapper">
-                <li>    
-                    <div class="center row">
-                        <div class="col s12" >
-                            <div id="topbarsearch">
-                                <div class="input-field col s6 s12 white">
-                                    <i class="black-text material-icons prefix">search</i>
-                                    <input type="text" placeholder="search" id="autocomplete-input" class="autocomplete black-text" >
-                                </div>
-                            </div>
-                        </div>
-                    </div>          
-                </li>
-                <% if (user) { %>
-                    <li><a href="/logout"><i class="material-icons left">trending_flat</i>Logout</a></li>
-                <% } else { %>
-                    <li><a href="/auth/facebook"><i class="material-icons left">vpn_key</i>Login with Facebook</a></li>
-                <% } %>
-            </div>
+    <nav class="index">
+        <a href="/" class="brand-logo">Music DB</a>
+        <ul class="right">
+        <li>Professional Musician?</li>
+        <li><a href="/auth/facebook"><i class="material-icons left">account_circle</i>Log In</a></li>
         </ul>
     </nav>
 </div>
+
 <main class="search-results">
+    <div>
+        <a href="/"><i class="material-icons left">keyboard_backspace</i>Back to Search</a>
+    </div>
+    <br>
     <div class="row">
         <div class="col s7">
             <h5>Joe Shmoe</h5>
@@ -95,31 +84,5 @@
         </div>
     </div>
 </main>
-<footer class="page-footer search-results">
-        <div class="container">
-            <div class="row">
-            <div class="col l6 s12">
-                <h5 class="white-text">Footer Content Here</h5>
-                <p class="grey-text text-lighten-4">We can use rows and columns here to organize our footer content.</p>
-            </div>
-            <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
-                <ul>
-                <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-                </ul>
-            </div>
-            </div>
-        </div>
-        <div class="footer-copyright">
-            <div class="container">
-            © 2018 Copyright Music DB
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-            </div>
-        </div>
-    </footer>
-    
-    </body>
-    </html>
+
+<%- include('../_partials/footer')%>
