@@ -7,39 +7,23 @@
         <li class="center-align"><img src="/images/person-placeholder.png" alt="profile-pic"></li>
      <% } %>
     </li>
-    <li class="center-align"><h4><%= user.fullName  %></h4></li>
+    <li class="center-align"><h4><%= user.fullName %></h4></li>
 </ul>
 <div class="navbar-fixed valign-wrapper">
     <nav>
-        <ul class=“right”>
-            <li><a href=“/logout”>Logout</a></li>
-        </ul>
         <a href="#!" class="brand-logo">Music DB</a>
-        <ul class="right hide-on-med-and-down">
-            <div class="nav-wrapper">
-                <li>    
-                    <div class="center row">
-                        <div class="col s12" >
-                            <div id="topbarsearch">
-                                <div class="input-field col s6 s12 white">
-                                    <i class="black-text material-icons prefix">search</i>
-                                    <input type="text" placeholder="search" id="autocomplete-input" class="autocomplete black-text" >
-                                </div>
-                            </div>
-                            <ul class=“right”>
-                                <li><a href=“/logout”>Logout</a></li>
-                            </ul>
-                        </div>
-                    </div>          
-                </li>
-            </div>
-        </ul>
+        <div class="nav-wrapper right">
+            <ul class=“hide-on-med-and-down right”>
+                <li><a href="/logout"><i class="material-icons right">exit_to_app</i>Log Out</a></li>
+            </ul>
+        </div>
     </nav>
+</div>
 </div>
 <main class="credits-page">
     <section id="credits-container">
         <% if (user.credits) { %>
-            <h4><%= user.firstName %>'s Credits</h4>
+            <h4><%= user.firstName %>'s Credits <span class="chip"><%= user.credits.length %></span></h4>
             <hr>
             <table class="striped">
                 <thead>
@@ -57,8 +41,14 @@
                         <td><%= credit.instrument %></td>
                         <td><%= credit.artist %></td>
                         <td>
-                            <a href="/credits/<%= credit._id %>/edit"><button class="waves-effect waves-light btn editCredit">Edit</button></a>
-                            <button class="btn-floating btn-large waves-effect waves-light red deleteCredit" onclick="deleteCredit('<%= credit._id %>')">Delete</button>
+                            <a href="/credits/<%= credit._id %>/edit">
+                                <button class="btn-floating btn-small waves-effect waves-light #546e7a blue-grey darken-1 editCredit">
+                                    <i class="material-icons left">edit</i>
+                                </button>
+                            </a>
+                            <button class="btn-floating btn-small waves-effect waves-light red deleteCredit" onclick="deleteCredit('<%= credit._id %>')">
+                                <i class="material-icons left">delete</i>
+                            </button>
                         </td>
                     </tr>
                     <% }) %>
@@ -73,7 +63,7 @@
     <div id="modal1" class="modal card black-grey darken-1">
         <div class="modal-content #424242 grey darken-3">
             <h4>Add A Credit</h4>
-            <div id="modal-credit" class="card #e0e0e0 grey lighten-2">
+            <div id="modal-credit" class="card white lighten-2">
                 <div class="row col s12">
                     <div class="col s4 left-align"><p class="modal-content">What did you do?</p></div>
                     <div class="input-field col s3 left-align">
