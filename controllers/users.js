@@ -4,8 +4,8 @@ const rootURL = 'https://api.spotify.com/v1/';
 
 
 function search(req, res) {
-        res.render('users/search-results', { user: req.user });
-    };
+    res.render('users/search-results', { user: req.user });
+};
 
 function newUser(req, res) {
     console.log(req.user)
