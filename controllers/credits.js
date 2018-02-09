@@ -6,6 +6,23 @@ function index(req, res) {
     });
 }
 
+function edit(req, res, next) {
+    Credit.findById(req.params.id, function(err, credit) {
+        if (err) return next(err);
+        res.render('credits/edit', { credit });
+    });
+}
+
+function updateCredit(req, res) {
+    Credit.findByIdAndUpdate(req.params.id, req.body, function(err, credit) {
+        req.user.save();
+        res.redirect('/credits')
+    });
+}
+
+
 module.exports = {
-    index
+    index,
+    edit,
+    updateCredit
 }
