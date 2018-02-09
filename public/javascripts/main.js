@@ -51,7 +51,8 @@ $(document).ready(function() {
     });
     var credits;
     
-    document.getElementById('add-credit').addEventListener('click', function (evt) {
+    var addCreditEl = document.getElementById('add-credit');
+    if (addCreditEl) addCreditEl.addEventListener('click', function (evt) {
       evt.preventDefault();
       fetch('/api/credits', {
         method: 'POST',
@@ -69,8 +70,19 @@ $(document).ready(function() {
           // credits[idx] = data;
           window.location.reload();
         });
+      });
     });
-});
+    
+function deleteCredit(creditId) {
+  fetch(`/api/credits/${creditId}`, {
+    method: 'DELETE',
+    credentials: 'include'
+  })
+  .then(res => res.json())
+  .then(data => {
+    window.location.reload();
+  })
+}
 
 
 
