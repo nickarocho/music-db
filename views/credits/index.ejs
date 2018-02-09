@@ -45,8 +45,11 @@
                 <p><%= credit.action %></p>
                 <p><%= credit.instrument %></p>
                 <p><%= credit.artist %></p>
+                <div class="col s2">
+                        <button class="waves-effect waves-light btn deleteCredit" onclick="deleteCredit('<%= credit._id %>')">Delete</button>
+                    </div>
             </div>
-        
+            
         <% }) %>
     </section>
     <h3>Add a Credit</h3>
