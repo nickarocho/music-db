@@ -1,11 +1,53 @@
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
 nav, header, main, footer {
   padding-left: 330px;
   padding-right: 30px;
 }
 
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
 nav {
   padding-left: 330px;
   padding-right: 30px;
+  background-color: #282828;
+}
+
+main {
+  flex: 1 0 auto;
+  margin: 20px;
+}
+
+footer {
+  background-color: #282828 !important;
+}
+
+h4 {
+  font-weight: 300;
+}
+
+.btn {
+  background-color: #1DB955;
+}
+
+.btn:hover {
+  background-color: rgb(23, 159, 73);
+}
+
+.brand-logo {
+  font-weight: 700
+}
+
+.side-nav {
+  color: white;
+  padding: 50px 20px;
+  background-color: #121212;
 }
 
 .index {
@@ -24,21 +66,6 @@ nav.search-results, footer.search-results {
 
 main.search-results, footer.search-results {
   padding: 50px;
-}
-
-main {
-  margin: 20px;
-  min-height: 47.5vh;
-}
-
-@media only screen and (max-width : 992px) {
-  nav, header, main, footer {
-    padding-left: 0;
-  }
-}
-
-.side-nav {
-  padding: 50px 20px;
 }
 
 .credits-row {
@@ -63,4 +90,25 @@ td {
 
 .profile-pic {
   width: 200px;
+}
+
+#modal-credit {
+  padding: 50px;
+}
+
+.modal-content h4 {
+  color: white;
+}
+
+.input-field input[type=text]:focus + label, 
+.input-field input[type=text]:focus, 
+.input-field .prefix.active,
+.input-field input[type=text]:focus {
+  color:#00c853;
+}
+
+@media only screen and (max-width : 992px) {
+  nav, header, main, footer {
+    padding-left: 0;
+  }
 }
