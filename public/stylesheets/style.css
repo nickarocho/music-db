@@ -60,3 +60,7 @@ td {
 .add-credit-row {
   display: inline;
 }
+
+.profile-pic {
+  width: 200px;
+}

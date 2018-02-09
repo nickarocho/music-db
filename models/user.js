@@ -10,6 +10,9 @@ var userSchema = new mongoose.Schema({
     alias: String,
     facebookId: String,
     picture: String,
+}, {
+    timestamps: true,
+    virtuals: true
 });
 
 userSchema.virtual('fullName').get(function() {

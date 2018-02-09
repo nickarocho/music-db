@@ -2,20 +2,12 @@
 <ul id="slide-out" class="side-nav fixed teal lighten-2">
     <li>
       <% if (user.picture) { %> 
-        <img src="<%= user.picture %>">
+        <li class="center-align"><img class="profile-pic circle" src="<%= user.picture %>"></li>
       <% } else { %>
         <li class="center-align"><img src="/images/person-placeholder.png" alt="profile-pic"></li>
      <% } %>
     </li>
-    <li><% if (user.firstName && user.lastName) { %>
-        <h4><%= user.firstName + ' ' + user.lastName  %></h4>
-        <% } else { %>
-            <div class="input-field col s6">
-                <input id="hometown" type="text" class="validate">
-                <label class="active" for="hometown">Hometown</label>
-            </div>
-        <% } %>
-    </li>
+    <li class="center-align"><h4><%= user.fullName  %></h4></li>
 </ul>
 <div class="navbar-fixed valign-wrapper">
     <nav>
@@ -40,44 +32,61 @@
 </div>
 <main class="credits-page">
     <section id="credits-container">
-        <% user.credits.forEach(function(credit) { %>
-            <div>
-                <p><%= credit.action %></p>
-                <p><%= credit.instrument %></p>
-                <p><%= credit.artist %></p>
-                <div class="col s2">
-                        <button class="waves-effect waves-light btn deleteCredit" onclick="deleteCredit('<%= credit._id %>')">Delete</button>
-                    </div>
-            </div>
-            
-        <% }) %>
+        <% if (user.credits) { %>
+            <h4><%= user.firstName %>'s Credits</h4>
+            <hr>
+            <table class="striped">
+                <thead>
+                    <tr>
+                        <th>Credit Type</th>
+                        <th>Instrument</th>
+                        <th>Artist</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <% user.credits.forEach(function(credit) { %>
+                    <tr>
+                        <td><%= credit.action %></td>
+                        <td><%= credit.instrument %></td>
+                        <td><%= credit.artist %></td>
+                    </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        <% } %>
     </section>
-    <h3>Add a Credit</h3>
-    <div class="row col s12 valign-wrapper">
-        <div class="col s1 left-align"><h5>I</h5></div>
-        <div class="input-field col s2 left-align">
-            <select id="action">
-                <option value="" disabled selected>Choose one...</option>
-                <option value="played">played</option>
-                <option value="wrote">wrote</option>
-                <option value="produced">produced</option>
-            </select>
+    <hr>
+    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Add New Credit</a>
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <div class="row col s12">
+                <div class="col s2 right-align"><h5>I</h5></div>
+                <div class="input-field col s5 left-align">
+                    <select id="action">
+                        <option value="" disabled selected>Choose one...</option>
+                        <option value="played">played</option>
+                        <option value="wrote">wrote</option>
+                        <option value="produced">produced</option>
+                    </select>
+                </div>
+                <div class="input-field col s5 left-align">
+                    <i class="material-icons prefix">textsms</i>
+                    <input type="text" id="autocomplete-input" class="autocomplete-instruments">
+                    <label for="autocomplete-input">Start typing...</label>
+                </div>
+            </div>
+            <div class="row col s12">
+                <div class="col s1 left-align"><h5>with</h5></div>
+                <div class="input-field col s11 left-align">
+                    <i class="material-icons prefix">textsms</i>
+                    <input type="text" id="autocomplete-input" class="autocomplete search-spotify" oninput="searchSpotify()">
+                    <label for="autocomplete-input">Start typing... (Powered by Spotify)</label>
+                </div>
+            </div>
         </div>
-        <div class="input-field col s2 left-align">
-            <i class="material-icons prefix">textsms</i>
-            <input type="text" id="autocomplete-input" class="autocomplete-instruments">
-            <label for="autocomplete-input">Start typing...</label>
-        </div>
-        <div class="col s1 left-align"><h5>with</h5></div>
-        <div class="input-field col s4 left-align">
-            <i class="material-icons prefix">textsms</i>
-            <input type="text" id="autocomplete-input" class="autocomplete search-spotify" oninput="searchSpotify()">
-            <label for="autocomplete-input">Start typing... (Powered by Spotify)</label>
-        </div>
-        <div class="col s2">
-            <a id="add-credit" class="waves-effect waves-light btn mdb-submit">Submit</a>
+        <div class="modal-footer">
+            <a id="add-credit" class="modal-action modal-close waves-effect waves-light btn mdb-submit">Submit</a>
         </div>
     </div>
 </main>
-
 <%- include('../_partials/footer')%>
