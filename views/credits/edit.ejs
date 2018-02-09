@@ -20,8 +20,8 @@
     </nav>
 </div>
 <main class="credits-page">
-    <div class="card black-grey darken-1">
-        <div class="card #424242 grey darken-3">
+    <form action="/credits/<%= credit._id + '/' + '?_method=PUT'%>" method='post'>
+        <div id="modal-credit" class="modal-content card #424242 grey darken-3">
             <h4>Edit This Credit</h4>
             <div id="modal-credit" class="card white lighten-2">
                 <div class="row col s12">
@@ -48,36 +48,10 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <input type="submit" value="Update Credit" class="modal-action right modal-close waves-effect waves-light btn mdb-submit">
+            </div>
         </div>
-        <div class="modal-footer #212121 grey darken-4">
-            <a id="add-credit" class="modal-action modal-close waves-effect waves-light btn mdb-submit"><input type="submit" value="Update Credit"></a>
-        </div>
-    </div>
-
-
-            <section id="credits-container">
-                <form action="/credits/<%= credit._id + '/' + '?_method=PUT'%>" method='post'>
-                    <label>Action:
-                        <select id="action" name="action">
-                            <option value="played" <%= credit.action === 'played' && 'selected' %>>played</option>
-                            <option value="wrote" <%= credit.action === 'wrote' && 'selected' %>>wrote</option>
-                            <option value="produced" <%= credit.action === 'produced' && 'selected' %>>produced</option>
-                        </select>
-                    </label>
-                    <label>Instrument:
-                        <input type="text" name="instrument" value="<%= credit.instrument %>" id="autocomplete-input" class="autocomplete-instruments">
-                            <label for="autocomplete-input">Start typing...</label>
-                    </label>
-                    <label>Artist:
-                        <input type="text" name="artist" value="<%= credit.artist %>">
-                    </label>
-                    <input type="submit" value="Edit">
-                </form>
-            </section>
-            <hr>
-            
-
-
+    </form>
 </main>
-
-    <%- include('../_partials/footer')%>
+<%- include('../_partials/footer')%>
