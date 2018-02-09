@@ -1,7 +1,7 @@
 <%- include('../_partials/header') %>
-<ul id="slide-out" class="side-nav fixed teal lighten-2">
+<ul id="slide-out" class="side-nav fixed">
     <li>
-      <% if (user.picture) { %> 
+      <% if (user.picture) { %>
         <li class="center-align"><img class="profile-pic circle" src="<%= user.picture %>"></li>
       <% } else { %>
         <li class="center-align"><img src="/images/person-placeholder.png" alt="profile-pic"></li>
@@ -11,6 +11,9 @@
 </ul>
 <div class="navbar-fixed valign-wrapper">
     <nav>
+        <ul class=“right”>
+            <li><a href=“/logout”>Logout</a></li>
+        </ul>
         <a href="#!" class="brand-logo">Music DB</a>
         <ul class="right hide-on-med-and-down">
             <div class="nav-wrapper">
@@ -23,6 +26,9 @@
                                     <input type="text" placeholder="search" id="autocomplete-input" class="autocomplete black-text" >
                                 </div>
                             </div>
+                            <ul class=“right”>
+                                <li><a href=“/logout”>Logout</a></li>
+                            </ul>
                         </div>
                     </div>          
                 </li>
@@ -50,43 +56,48 @@
                         <td><%= credit.action %></td>
                         <td><%= credit.instrument %></td>
                         <td><%= credit.artist %></td>
-                        <td><button class="waves-effect waves-light btn deleteCredit" onclick="deleteCredit('<%= credit._id %>')">Delete</button></td>
+                        <td><button class="btn-floating btn-large waves-effect waves-light red deleteCredit" onclick="deleteCredit('<%= credit._id %>')"><i class="material-icons left">delete</i>Delete</button></td>
                     </tr>
                     <% }) %>
                 </tbody>
             </table>
+        <% } else { %>
+            <h4>Hmm... no credits yet.</h4>
         <% } %>
     </section>
-    <hr>
-    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Add New Credit</a>
-    <div id="modal1" class="modal">
-        <div class="modal-content">
-            <div class="row col s12">
-                <div class="col s2 right-align"><h5>I</h5></div>
-                <div class="input-field col s5 left-align">
-                    <select id="action">
-                        <option value="" disabled selected>Choose one...</option>
-                        <option value="played">played</option>
-                        <option value="wrote">wrote</option>
-                        <option value="produced">produced</option>
-                    </select>
+    <br>
+    <a class="waves-effect waves-light btn modal-trigger" href="#modal1"><i class="material-icons left">library_add</i>Add A Credit</a>
+    <div id="modal1" class="modal card black-grey darken-1">
+        <div class="modal-content #424242 grey darken-3">
+            <h4>Add A Credit</h4>
+            <div id="modal-credit" class="card #e0e0e0 grey lighten-2">
+                <div class="row col s12">
+                    <div class="col s4 left-align"><p class="modal-content">What did you do?</p></div>
+                    <div class="input-field col s3 left-align">
+                        <select id="action">
+                            <option value="" disabled selected>Choose one...</option>
+                            <option value="played">played</option>
+                            <option value="wrote">wrote</option>
+                            <option value="produced">produced</option>
+                        </select>
+                    </div>
+                    <div class="input-field col s5 left-align">
+                        <i class="material-icons prefix">textsms</i>
+                        <input type="text" id="autocomplete-input" class="autocomplete-instruments">
+                        <label for="autocomplete-input">Start typing...</label>
+                    </div>
                 </div>
-                <div class="input-field col s5 left-align">
-                    <i class="material-icons prefix">textsms</i>
-                    <input type="text" id="autocomplete-input" class="autocomplete-instruments">
-                    <label for="autocomplete-input">Start typing...</label>
-                </div>
-            </div>
-            <div class="row col s12">
-                <div class="col s1 left-align"><h5>with</h5></div>
-                <div class="input-field col s11 left-align">
-                    <i class="material-icons prefix">textsms</i>
-                    <input type="text" id="autocomplete-input" class="autocomplete search-spotify" oninput="searchSpotify()">
-                    <label for="autocomplete-input">Start typing... (Powered by Spotify)</label>
+                <div class="row col s12 valign-wrapper">
+                    <div class="col s3 left-align"><p class="modal-content">Who with?</p></div>
+                    <div class="input-field col s9 left-align">
+                        <i class="material-icons prefix">textsms</i>
+                        <input type="text" id="autocomplete-input" class="autocomplete search-spotify" oninput="searchSpotify()">
+                        <label for="autocomplete-input">Start typing... (Powered by Spotify)</label>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="modal-footer">
+        <div class="modal-footer #212121 grey darken-4">
             <a id="add-credit" class="modal-action modal-close waves-effect waves-light btn mdb-submit">Submit</a>
         </div>
     </div>
