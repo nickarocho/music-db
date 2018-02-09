@@ -5,8 +5,14 @@ const rootURL = 'https://api.spotify.com/v1/';
 const spotifyApi = require('./../../config/token');
 
 function getCredits(req, res) {
-    res.status(200).json(convertToObj(Credit.schema.path('instrument').enumValues))
+    Credit.find({}, function(err, creds) {
+        res.status(200).json(creds);
+    })
 };
+
+function getInstruments(res, res) {
+    res.status(200).json(convertToObj(Credit.schema.path('instrument').enumValues))
+}
 
 function createCredit(req, res) {
     var credit = new Credit(req.body);
@@ -31,5 +37,6 @@ function deleteCredit(req, res) {
 module.exports = {
     getCredits,
     createCredit,
-    deleteCredit
+    deleteCredit,
+    getInstruments
 }
