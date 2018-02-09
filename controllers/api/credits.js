@@ -18,9 +18,18 @@ function createCredit(req, res) {
             });
         });
     });
+};
+
+function deleteCredit(req, res) {
+    Credit.findByIdAndRemove(req.params.id, function(err, credit) {
+        req.user.credits.remove(req.params.id);
+        req.user.save()
+        res.json({msg: "deleted credit"});
+    })
 }
 
 module.exports = {
     getCredits,
     createCredit,
+    deleteCredit
 }
