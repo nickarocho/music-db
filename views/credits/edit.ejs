@@ -1,0 +1,21 @@
+<%- include('../_partials/header') %>
+
+    <main class="credits-page">
+        <section id="credits-container">
+            <form action="/credits/<%= credit._id + '/' + '?_method=PUT'%>" method='post'>
+                <label>Action:
+                    <input type="text" name="action" class="select-dropdown" value="<%= credit.action %>">
+                </label>
+                <label>Instrument:
+                    <input type="text" name="instrument" value="<%= credit.instrument %>">
+                </label>
+                <label>Artist:
+                    <input type="text" name="artist" value="<%= credit.artist %>">
+                </label>
+                <input type="submit" value="Edit">
+            </form>
+        </section>
+        <hr>
+        
+    </main>
+    <%- include('../_partials/footer')%>
