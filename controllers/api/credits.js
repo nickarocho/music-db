@@ -7,11 +7,11 @@ const spotifyApi = require('./../../config/token');
 function getCredits(req, res) {
     Credit.find({}, function(err, creds) {
         res.status(200).json(creds);
-    })
-};
+    });
+}
 
 function getInstruments(res, res) {
-    res.status(200).json(convertToObj(Credit.schema.path('instrument').enumValues))
+    res.status(200).json(convertToObj(Credit.schema.path('instrument').enumValues));
 }
 
 function createCredit(req, res) {
@@ -24,14 +24,14 @@ function createCredit(req, res) {
             });
         });
     });
-};
+}
 
 function deleteCredit(req, res) {
     Credit.findByIdAndRemove(req.params.id, function(err, credit) {
         req.user.credits.remove(req.params.id);
         req.user.save()
         res.json({msg: "deleted credit"});
-    })
+    });
 }
 
 module.exports = {
