@@ -41,6 +41,7 @@
                         <th>Credit Type</th>
                         <th>Instrument</th>
                         <th>Artist</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -49,6 +50,7 @@
                         <td><%= credit.action %></td>
                         <td><%= credit.instrument %></td>
                         <td><%= credit.artist %></td>
+                        <td><button class="waves-effect waves-light btn deleteCredit" onclick="deleteCredit('<%= credit._id %>')">Delete</button></td>
                     </tr>
                     <% }) %>
                 </tbody>
