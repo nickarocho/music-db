@@ -101,10 +101,12 @@ td {
 }
 
 .input-field input[type=text]:focus + label, 
-.input-field input[type=text]:focus, 
-.input-field .prefix.active,
-.input-field input[type=text]:focus {
+.input-field .prefix.active {
   color:#00c853;
+}
+
+input[type=text]:focus:not([readonly]) {
+  border-bottom: 1px solid #00c853;
 }
 
 @media only screen and (max-width : 992px) {

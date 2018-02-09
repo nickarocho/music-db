@@ -4,10 +4,15 @@
         <section id="credits-container">
             <form action="/credits/<%= credit._id + '/' + '?_method=PUT'%>" method='post'>
                 <label>Action:
-                    <input type="text" name="action" class="select-dropdown" value="<%= credit.action %>">
+                    <select id="action" name="action">
+                        <option value="played" <%= credit.action === 'played' && 'selected' %>>played</option>
+                        <option value="wrote" <%= credit.action === 'wrote' && 'selected' %>>wrote</option>
+                        <option value="produced" <%= credit.action === 'produced' && 'selected' %>>produced</option>
+                    </select>
                 </label>
                 <label>Instrument:
-                    <input type="text" name="instrument" value="<%= credit.instrument %>">
+                    <input type="text" name="instrument" value="<%= credit.instrument %>" id="autocomplete-input" class="autocomplete-instruments">
+                        <label for="autocomplete-input">Start typing...</label>
                 </label>
                 <label>Artist:
                     <input type="text" name="artist" value="<%= credit.artist %>">
