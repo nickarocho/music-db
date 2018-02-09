@@ -50,7 +50,10 @@
                         <td><%= credit.action %></td>
                         <td><%= credit.instrument %></td>
                         <td><%= credit.artist %></td>
-                        <td><button class="waves-effect waves-light btn deleteCredit" onclick="deleteCredit('<%= credit._id %>')">Delete</button></td>
+                        <td>
+                            <a href="/credits/<%= credit._id %>/edit"><button class="waves-effect waves-light btn editCredit">Edit</button></a>
+                            <button class="waves-effect waves-light btn deleteCredit" onclick="deleteCredit('<%= credit._id %>')">Delete</button>
+                        </td>
                     </tr>
                     <% }) %>
                 </tbody>
