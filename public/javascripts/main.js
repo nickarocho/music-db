@@ -37,7 +37,7 @@ $(document).ready(function() {
   // dropdown selection
   $('select').material_select();
   // autocomplete (w/ "instruments" enum from credit model)
-  fetch('/api/credits')
+  fetch('/api/instruments')
     .then(res => res.json())
     .then(function(json) {
       $('input.autocomplete-instruments').autocomplete({

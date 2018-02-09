@@ -6,6 +6,10 @@ function index(req, res) {
     });
 }
 
+function searchCredit(req, res) {
+    res.render('users/search-results', { user: req.user });
+};
+
 function edit(req, res, next) {
     Credit.findById(req.params.id, function(err, credit) {
         if (err) return next(err);
@@ -24,5 +28,6 @@ function updateCredit(req, res) {
 module.exports = {
     index,
     edit,
-    updateCredit
+    updateCredit,
+    searchCredit
 }
