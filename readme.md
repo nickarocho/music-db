@@ -24,7 +24,7 @@ Prior to pitching Music DB to our tech advisors we first began brainstorming ide
 
 Once we knew what direction we wanted to go we created a **[pitch deck](https://docs.google.com/presentation/d/1s1ZraT1Jqh7GH6N4qVrCChEWphwolOWF7pzhdXrgMu4/edit#slide=id.g35f391192_00)** .
 
-Now that Music DB is a real life app rather than just an idea, we deployed our app on Heroku for you to **[view](https://recordsdb.herokuapp.com/)**!
+Now that Music DB is a real life app rather than just an idea, we deployed our app on Heroku for you to **[view here](https://imusicdb.herokuapp.com/)**!
 
 
 ### How Music DB works
