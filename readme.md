@@ -20,11 +20,11 @@ Our goal in creating Music DB was to build a platform where every single musicia
 
 ## Getting Started
 
+ **[View the App](https://imusicdb.herokuapp.com/)**!
+
 Prior to pitching Music DB to our tech advisors we first began brainstorming ideas on our **[Trello board](https://trello.com/b/LrWaPHwh/dassit-music-db)**.
 
 Once we knew what direction we wanted to go we created a **[pitch deck](https://docs.google.com/presentation/d/1s1ZraT1Jqh7GH6N4qVrCChEWphwolOWF7pzhdXrgMu4/edit#slide=id.g35f391192_00)** .
-
-Now that Music DB is a real life app rather than just an idea, we deployed our app on Heroku for you to **[view here](https://imusicdb.herokuapp.com/)**!
 
 
 ### How Music DB works
